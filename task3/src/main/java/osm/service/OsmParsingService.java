@@ -14,7 +14,6 @@ import javax.xml.stream.XMLStreamReader;
 import lombok.RequiredArgsConstructor;
 import org.apache.commons.compress.compressors.bzip2.BZip2CompressorInputStream;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 import osm.model.NodeConverter;
 import osm.model.generated.Node;
 

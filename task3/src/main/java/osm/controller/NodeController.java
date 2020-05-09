@@ -1,7 +1,6 @@
 package osm.controller;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
@@ -20,9 +19,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import osm.service.CRUDService;
 import osm.model.NodeConverter;
 import osm.model.NodeDTO;
+import osm.service.CRUDService;
 import osm.service.OsmParsingService;
 
 @RestController
@@ -69,7 +68,7 @@ public class NodeController {
     public void init(
             @RequestParam("osmPath") String osmPath
     ) throws IOException, JAXBException, XMLStreamException {
-        try(InputStream is = new FileInputStream(osmPath)) {
+        try (InputStream is = new FileInputStream(osmPath)) {
             osmParsingService.parse(is);
         }
     }
